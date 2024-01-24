@@ -1,4 +1,3 @@
-import 'package:chess_game_app/views/test.dart';
 import 'package:flutter/material.dart';
 
 import 'views/home_view.dart';
@@ -22,10 +21,9 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         // '/':(context) =>  Test(),
-        '/':(context) => const HomeView(),
+        '/': (context) => const HomeView(),
         GameView.routeName: (context) => GameView(),
       },
     );
   }
 }
-

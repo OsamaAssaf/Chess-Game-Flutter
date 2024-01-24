@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../view_models/game_view_model.dart';
 import '../components/chess_pieces.dart';
 
 class GameView extends StatelessWidget {
-  GameView({Key? key}) : super(key: key);
+  GameView({super.key});
   static const String routeName = '/game_view';
   final GameViewModel _viewModel = GameViewModel();
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
@@ -48,12 +44,13 @@ class GameView extends StatelessWidget {
                           alignment: Alignment.center,
                           color: i % 2 == 0
                               ? j % 2 == 0
-                              ? _viewModel.boardColorTow
-                              : _viewModel.boardColorOne
+                                  ? _viewModel.boardColorTow
+                                  : _viewModel.boardColorOne
                               : j % 2 == 0
-                              ? _viewModel.boardColorOne
-                              : _viewModel.boardColorTow,
-                          child: ChessPieces(width: constraints.maxWidth, rowNumber: i, columnNumber: j),
+                                  ? _viewModel.boardColorOne
+                                  : _viewModel.boardColorTow,
+                          child: ChessPieces(
+                              width: constraints.maxWidth, rowNumber: i, columnNumber: j),
                         ),
                   ],
                 );
@@ -69,5 +66,3 @@ class GameView extends StatelessWidget {
     );
   }
 }
-
-

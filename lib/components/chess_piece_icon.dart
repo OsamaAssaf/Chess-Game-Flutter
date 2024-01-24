@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ChessPieceIcon extends StatelessWidget {
-  const ChessPieceIcon({Key? key, required this.icon, required this.width, required this.color, required this.rowNumber, required this.columnNumber}) : super(key: key);
+  const ChessPieceIcon({
+    super.key,
+    required this.icon,
+    required this.width,
+    required this.color,
+    required this.rowNumber,
+    required this.columnNumber,
+  });
 
   final IconData icon;
   final double width;
@@ -13,10 +20,10 @@ class ChessPieceIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         print('Row: $rowNumber');
         print('Column: $columnNumber');
-        if(icon == FontAwesomeIcons.solidChessPawn){
+        if (icon == FontAwesomeIcons.solidChessPawn) {
           print('solidChessPawn');
         }
       },
